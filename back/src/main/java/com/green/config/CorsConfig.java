@@ -47,11 +47,9 @@ public class CorsConfig implements WebMvcConfigurer {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOriginPatterns("http://localhost:3000") // 안에 해당 주소를 넣어도 됨
-                        .allowedHeaders("*")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS" , "PATCH")
-                        .exposedHeaders("Authorization", "RefreshToken");
-                //.allowCredentials(true);
+                        .allowedOrigins("http://13.211.200.67","http://loamong.shop") // 또는 '*'로 모든 도메인 허용
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD")
+                        .allowCredentials(true);
             }
         };
     }
